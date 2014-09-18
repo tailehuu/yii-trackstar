@@ -46,7 +46,7 @@ class LoginForm extends CFormModel
 	 */
 	public function authenticate($attribute,$params)
 	{
-		if(!$this->hasErrors())
+        if(!$this->hasErrors())
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			if(!$this->_identity->authenticate())
@@ -60,7 +60,7 @@ class LoginForm extends CFormModel
 	 */
 	public function login()
 	{
-		if($this->_identity===null)
+        if($this->_identity===null)
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			$this->_identity->authenticate();
